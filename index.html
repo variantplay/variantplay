@@ -267,7 +267,8 @@
 
     <!-- App Dashboard Layout (Visible when logged in) -->
     <div id="app-container" class="app-container" style="display: none;">
-        <aside class="app-sidebar">
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+        <aside class="app-sidebar" id="app-sidebar">
             <div class="app-logo">
                 <div class="logo-mark">V</div>
                 <span class="logo-text">VARIANT<span class="logo-accent">PLAY</span></span>
@@ -289,9 +290,12 @@
         <main class="app-main">
             <!-- Header -->
             <header class="app-header">
-                <div>
-                    <h2 id="app-greeting">Welcome back!</h2>
-                    <p style="color:var(--text-muted); font-size:0.9rem;">Ready to earn some rewards?</p>
+                <div style="display:flex; align-items:center; gap:15px;">
+                    <button id="sidebar-toggle" class="btn btn-outline" style="padding: 0.5rem; display:none;"><i class="ph-fill ph-list" style="font-size: 1.5rem; line-height: 1;"></i></button>
+                    <div>
+                        <h2 id="app-greeting">Welcome back!</h2>
+                        <p style="color:var(--text-muted); font-size:0.9rem;" class="hide-mobile">Ready to earn some rewards?</p>
+                    </div>
                 </div>
                 <div class="app-header-actions">
                     <div class="badge" style="margin:0; background:rgba(0, 229, 255, 0.1); border-color:var(--accent-cyan); color:var(--accent-cyan);">

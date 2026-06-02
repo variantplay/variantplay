@@ -1560,3 +1560,93 @@ input:checked + .slider:before {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+/* --- Mobile Responsive Rules --- */
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    display: none;
+    backdrop-filter: blur(3px);
+}
+.sidebar-overlay.open {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .hide-mobile { display: none !important; }
+    
+    .app-sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+    }
+    
+    .app-sidebar.open {
+        transform: translateX(0);
+    }
+    
+    #sidebar-toggle {
+        display: block !important;
+    }
+    
+    .app-header, .app-view {
+        padding: 1rem 1.5rem;
+    }
+    
+    .dashboard-stats-grid,
+    .profile-settings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dash-stat-card {
+        padding: 1rem;
+    }
+    
+    .profile-banner {
+        height: 100px;
+    }
+    
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+        bottom: -40px;
+    }
+    
+    .profile-info-header {
+        margin-top: 50px;
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .profile-avatar-wrapper {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    .features-grid, .games-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
+}

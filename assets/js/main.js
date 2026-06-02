@@ -14,6 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('referral_uid', urlParams.get('ref'));
     }
 
+    // --- Mobile Sidebar Toggle ---
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const appSidebar = document.getElementById('app-sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    
+    if (sidebarToggle && appSidebar && sidebarOverlay) {
+        sidebarToggle.addEventListener('click', () => {
+            appSidebar.classList.toggle('open');
+            sidebarOverlay.classList.toggle('open');
+        });
+        sidebarOverlay.addEventListener('click', () => {
+            appSidebar.classList.remove('open');
+            sidebarOverlay.classList.remove('open');
+        });
+    }
+
     // --- UI Setup & Scroll animations ---
     const animatedElements = document.querySelectorAll('.fade-in-up');
     const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
@@ -191,6 +207,15 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
 
             const viewName = link.getAttribute('data-view');
+            
+            if (window.innerWidth <= 768) {
+                const sidebar = document.getElementById('app-sidebar');
+                const overlay = document.getElementById('sidebar-overlay');
+                if (sidebar && overlay) {
+                    sidebar.classList.remove('open');
+                    overlay.classList.remove('open');
+                }
+            }
             
             if (viewName === 'home') {
                 // If they click home, we can just log them out or hide the app container
