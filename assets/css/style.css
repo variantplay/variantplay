@@ -1612,21 +1612,42 @@ input:checked + .slider:before {
         height: 100px;
     }
     
-    .profile-avatar {
+    .profile-avatar-wrapper {
         width: 80px;
         height: 80px;
         bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
     }
     
     .profile-info-header {
         margin-top: 50px;
         margin-left: 0;
         text-align: center;
+        word-break: break-word;
     }
-    
-    .profile-avatar-wrapper {
-        left: 50%;
-        transform: translateX(-50%);
+
+    .app-view p, .contact-card p, .app-view div {
+        word-break: break-word;
+    }
+
+    .game-layout {
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+    }
+    .game-sidebar {
+        width: 100%;
+        order: 2;
+        border-right: none;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 1rem;
+    }
+    .game-canvas-area {
+        order: 1;
+        min-height: 400px;
+        height: 50vh;
     }
 
     .hero-container {
