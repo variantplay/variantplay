@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variant Play | Play, Compete, Earn</title>
+    <meta name="description" content="Turn your gaming skills into side income. Play online mini-games, compete on leaderboards, and earn real rewards like cash payouts and gift cards on Variant Play.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Three.js for 3D Games -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar public-landing">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <!-- Using a text placeholder styled to look like the logo until image is provided -->
+                <div class="logo-mark">V</div>
+                <span class="logo-text">VARIANT<span class="logo-accent">PLAY</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#games">Games</a>
+                <a href="#rewards">Rewards</a>
+                <a href="#leaderboard">Leaderboard</a>
+            </nav>
+            <div class="nav-actions" id="nav-actions-container">
+                <a href="#" class="btn btn-outline login-trigger" id="header-login-btn">Log In</a>
+                <a href="#" class="btn btn-primary glow-btn create-account-trigger" id="header-create-btn">Create Account</a>
+                <a href="#" class="btn btn-primary glow-btn dashboard-trigger" id="header-dashboard-btn" style="display: none;">Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="public-landing">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content fade-in-up">
+                    <div class="badge">🔥 New User Bonus: 1000 Free points</div>
+                    <h1 class="hero-title">PLAY. COMPETE. <br><span class="text-gradient">EARN REWARDS.</span></h1>
+                    <p class="hero-subtitle">Turn your gaming skills into real side income. Experience competitive mini-games, instant cash payouts, and exclusive gift cards.</p>
+                    <div class="hero-cta">
+                        <a href="#games" class="btn btn-primary btn-large glow-btn play-now-trigger">Start Playing Now <i class="ph ph-arrow-right"></i></a>
+                        <a href="#rewards" class="btn btn-secondary btn-large">View Rewards</a>
+                    </div>
+                    <div class="trust-indicators">
+                        <div class="avatars">
+                            <img src="https://i.pravatar.cc/100?img=1" alt="Player 1">
+                            <img src="https://i.pravatar.cc/100?img=2" alt="Player 2">
+                            <img src="https://i.pravatar.cc/100?img=3" alt="Player 3">
+                            <div class="avatar-more">100k+</div>
+                        </div>
+                        <p>Join over <strong>100,000+</strong> players earning daily.</p>
+                    </div>
+                </div>
+                <div class="hero-visual fade-in-up delay-1">
+                    <div class="hero-card">
+                        <div class="hero-card-header">
+                            <i class="ph-fill ph-trophy"></i> Daily Top Earner
+                        </div>
+                        <div class="hero-card-body">
+                            <h3>@CyberNinja99</h3>
+                            <div class="amount">+$100.00</div>
+                            <p>Cashed out successfully</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features/Rewards Section -->
+        <section id="rewards" class="features section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Real Skills. <span class="text-gradient">Real Rewards.</span></h2>
+                    <p>Stop playing for nothing. Variant Play offers multiple ways to cash out your winnings securely and instantly.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card glass-panel fade-in-up">
+                        <div class="feature-icon"><i class="ph-fill ph-currency-dollar"></i></div>
+                        <h3>Cash Payouts</h3>
+                        <p>Withdraw your winnings instantly via PayPal, Stripe, or Crypto. No hidden fees.</p>
+                    </div>
+                    <div class="feature-card glass-panel fade-in-up delay-1">
+                        <div class="feature-icon"><i class="ph-fill ph-gift"></i></div>
+                        <h3>Gift Cards</h3>
+                        <p>Redeem points for Amazon, Steam, PlayStation, and Xbox gift cards.</p>
+                    </div>
+                    <div class="feature-card glass-panel fade-in-up delay-2">
+                        <div class="feature-icon"><i class="ph-fill ph-trend-up"></i></div>
+                        <h3>Leaderboard Prizes</h3>
+                        <p>Rank high in our weekly global leaderboards to share massive prize pools.</p>
+                    </div>
+                    <div class="feature-card glass-panel fade-in-up delay-3">
+                        <div class="feature-icon"><i class="ph-fill ph-lightning"></i></div>
+                        <h3>Daily Bonuses</h3>
+                        <p>Log in every day to claim free tokens and multiply your earnings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section id="leaderboard" class="leaderboard section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Global <span class="text-gradient">Leaderboard</span></h2>
+                    <p>Top 10 players with the highest earnings. Compete to get on the wall of fame!</p>
+                </div>
+                <div class="leaderboard-container glass-panel fade-in-up" style="max-width: 600px; margin: 0 auto;">
+                    <div class="leaderboard-header" style="display:flex; justify-content:space-between; font-weight:bold; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:1rem; margin-bottom:1rem;">
+                        <span>Rank</span>
+                        <span>Player</span>
+                        <span>Coins</span>
+                    </div>
+                    <ul id="leaderboard-list" class="leaderboard-list" style="padding:0; margin:0;">
+                        <!-- Populated by JS -->
+                        <li style="text-align:center; padding:2rem; color:var(--text-muted);">Loading leaderboard...</li>
+                    </ul>
+                </div>
+                <!-- AdSense Placeholder -->
+                <div class="ad-placeholder mt-4 glass-panel fade-in-up" style="text-align:center; padding:2rem; color:var(--text-muted); max-width: 728px; margin: 2rem auto 0; border: 1px dashed rgba(255,255,255,0.2);">
+                    <p>AdSense Banner Placeholder (728x90)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Showcase Section -->
+        <section id="games" class="games section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Our Top <span class="text-gradient">Mini-Games</span></h2>
+                    <p>Fast-paced, skill-based games designed to test your reflexes and strategy.</p>
+                </div>
+                
+                <div class="games-grid">
+                    <!-- Game cards will be dynamically or manually populated here -->
+                    <div class="game-card fade-in-up">
+                        <div class="game-img-wrapper">
+                            <img src="assets/images/game-1.png" alt="Neon Rush" class="game-img placeholder-img">
+                            <div class="game-overlay">
+                                <a href="#" class="btn btn-primary btn-play play-game-trigger" data-game="Neon Rush"><i class="ph-fill ph-play"></i> Play</a>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <div class="game-tags">
+                                <span class="tag">Racing</span>
+                                <span class="tag tag-hot">Hot</span>
+                            </div>
+                            <h3>Neon Rush</h3>
+                            <div class="game-stats">
+                                <span><i class="ph-fill ph-users"></i> 12.4k Playing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-card fade-in-up delay-1">
+                        <div class="game-img-wrapper">
+                            <img src="assets/images/game-2.png" alt="Cyber Match" class="game-img placeholder-img">
+                            <div class="game-overlay">
+                                <a href="#" class="btn btn-primary btn-play play-game-trigger" data-game="Cyber Match"><i class="ph-fill ph-play"></i> Play</a>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <div class="game-tags">
+                                <span class="tag">Puzzle</span>
+                            </div>
+                            <h3>Cyber Match</h3>
+                            <div class="game-stats">
+                                <span><i class="ph-fill ph-users"></i> 8.2k Playing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-card fade-in-up delay-2">
+                        <div class="game-img-wrapper">
+                            <img src="assets/images/game-3.png" alt="Galactic Strike" class="game-img placeholder-img">
+                            <div class="game-overlay">
+                                <a href="#" class="btn btn-primary btn-play play-game-trigger" data-game="Galactic Strike"><i class="ph-fill ph-play"></i> Play</a>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <div class="game-tags">
+                                <span class="tag">Action</span>
+                                <span class="tag tag-new">New</span>
+                            </div>
+                            <h3>Galactic Strike</h3>
+                            <div class="game-stats">
+                                <span><i class="ph-fill ph-users"></i> 4.5k Playing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="center-btn mt-4">
+                    <a href="#games" class="btn btn-outline btn-large play-now-trigger">View All Games</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section section">
+            <div class="container">
+                <div class="cta-box glass-panel fade-in-up">
+                    <div class="glow-orb orb-3"></div>
+                    <h2>Ready to claim your <span class="text-gradient">side income?</span></h2>
+                    <p>Join Variant Play today and get 1000 points = 0.10$. Start competing and earning now.</p>
+                    <a href="#" class="btn btn-primary btn-large glow-btn create-account-trigger">Claim Your Bonus</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer public-landing">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-mark">V</div>
+                        <span class="logo-text">VARIANT<span class="logo-accent">PLAY</span></span>
+                    </a>
+                    <p>The ultimate destination for competitive mini-games and real rewards. Play hard, earn harder.</p>
+                    <div class="social-links">
+                        <a href="#" onclick="window.showToast('Redirecting to Twitter...', 'info'); return false;"><i class="ph-fill ph-twitter-logo"></i></a>
+                        <a href="#" onclick="window.showToast('Redirecting to Discord...', 'info'); return false;"><i class="ph-fill ph-discord-logo"></i></a>
+                        <a href="#" onclick="window.showToast('Redirecting to Instagram...', 'info'); return false;"><i class="ph-fill ph-instagram-logo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <a href="#games">Games</a>
+                    <a href="#leaderboard">Leaderboard</a>
+                    <a href="#" onclick="window.showToast('Tournaments feature coming soon!', 'info'); return false;">Tournaments</a>
+                    <a href="#rewards">Rewards</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <a href="#" onclick="window.showToast('FAQ coming soon!', 'info'); return false;">FAQ</a>
+                    <a href="#" onclick="window.showToast('Please log in or create an account to contact support.', 'info'); document.querySelector('.login-trigger').click(); return false;">Contact Us</a>
+                    <a href="#rewards">Payout Guide</a>
+                    <a href="#" onclick="window.showToast('Terms of Service coming soon!', 'info'); return false;">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Variant Play. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Dashboard Layout (Visible when logged in) -->
+    <div id="app-container" class="app-container" style="display: none;">
+        <aside class="app-sidebar">
+            <div class="app-logo">
+                <div class="logo-mark">V</div>
+                <span class="logo-text">VARIANT<span class="logo-accent">PLAY</span></span>
+            </div>
+            <nav class="app-nav">
+                <a href="#" class="app-nav-link" data-view="home"><i class="ph ph-house"></i> Home</a>
+                <a href="#" class="app-nav-link active" data-view="dashboard"><i class="ph ph-squares-four"></i> Dashboard</a>
+                <a href="#" class="app-nav-link" data-view="profile"><i class="ph ph-user"></i> Profile</a>
+                <a href="#" class="app-nav-link" data-view="withdrawal"><i class="ph ph-money"></i> Withdrawal</a>
+                <a href="#" class="app-nav-link" data-view="referral"><i class="ph ph-users"></i> Referral</a>
+                <a href="#" class="app-nav-link" data-view="settings"><i class="ph ph-gear"></i> Settings</a>
+                <a href="#" class="app-nav-link" data-view="contact"><i class="ph ph-envelope"></i> Contact</a>
+                <a href="#" class="app-nav-link" data-view="admin" id="app-nav-admin" style="display:none; color:var(--accent-purple);"><i class="ph-fill ph-shield-star"></i> Admin</a>
+            </nav>
+            <div class="app-sidebar-bottom">
+                <a href="#" id="app-logout-btn" class="app-nav-link"><i class="ph ph-sign-out"></i> Logout</a>
+            </div>
+        </aside>
+        <main class="app-main">
+            <!-- Header -->
+            <header class="app-header">
+                <div>
+                    <h2 id="app-greeting">Welcome back!</h2>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">Ready to earn some rewards?</p>
+                </div>
+                <div class="app-header-actions">
+                    <div class="badge" style="margin:0; background:rgba(0, 229, 255, 0.1); border-color:var(--accent-cyan); color:var(--accent-cyan);">
+                        <i class="ph-fill ph-coin"></i> <span id="app-header-coins">0</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Views -->
+            <div id="view-dashboard" class="app-view active">
+                <div class="dashboard-stats-grid">
+                    <div class="dash-stat-card glass-panel">
+                        <div class="stat-icon" style="color: var(--accent-purple);"><i class="ph-fill ph-game-controller"></i></div>
+                        <div>
+                            <p>Games Played</p>
+                            <h3 id="dash-games-played">0</h3>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card glass-panel">
+                        <div class="stat-icon" style="color: #FFD700;"><i class="ph-fill ph-coin"></i></div>
+                        <div>
+                            <p>Total Points</p>
+                            <h3 id="dash-points">0</h3>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card glass-panel">
+                        <div class="stat-icon" style="color: var(--accent-cyan);"><i class="ph-fill ph-currency-dollar"></i></div>
+                        <div>
+                            <p>Est. Value</p>
+                            <h3 id="dash-dollars">$0.00</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2rem 0 1rem;">Games Arena</h3>
+                <div class="games-grid" id="app-games-grid">
+                    <!-- Cloned from public landing page -->
+                </div>
+            </div>
+
+            <!-- Profile View -->
+            <div id="view-profile" class="app-view">
+                <div class="profile-header glass-panel">
+                    <div id="profile-banner" class="profile-banner theme-cyan"></div>
+                    <div class="profile-avatar-section">
+                        <div class="profile-avatar-wrapper">
+                            <img src="assets/images/placeholder-avatar.png" alt="Avatar" id="profile-avatar-img" class="profile-avatar">
+                            <label for="profile-avatar-upload" class="avatar-upload-overlay">
+                                <i class="ph-fill ph-camera"></i>
+                            </label>
+                            <input type="file" id="profile-avatar-upload" accept="image/png, image/jpeg" style="display:none;">
+                        </div>
+                        <div class="profile-info-header">
+                            <h2 id="profile-display-name">Loading...</h2>
+                            <p id="profile-display-email" style="color:var(--text-muted);">loading@email.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-settings-grid">
+                    <!-- Customization -->
+                    <div class="profile-card glass-panel">
+                        <h3><i class="ph-fill ph-paint-brush"></i> Profile Customization</h3>
+                        
+                        <div class="form-group" style="margin-top: 1.5rem;">
+                            <label>Banner Theme</label>
+                            <div class="theme-selector">
+                                <button class="theme-btn theme-cyan active" data-theme="theme-cyan"></button>
+                                <button class="theme-btn theme-purple" data-theme="theme-purple"></button>
+                                <button class="theme-btn theme-orange" data-theme="theme-orange"></button>
+                                <button class="theme-btn theme-dark" data-theme="theme-dark"></button>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 1.5rem;">
+                            <label>Username</label>
+                            <div style="display:flex; gap:10px;">
+                                <input type="text" id="profile-username-input" class="form-control" placeholder="Enter new username">
+                                <button id="profile-save-username" class="btn btn-primary glow-btn">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security -->
+                    <div class="profile-card glass-panel">
+                        <h3><i class="ph-fill ph-shield-check"></i> Account Security</h3>
+                        
+                        <div class="form-group" style="margin-top: 1.5rem;">
+                            <label>Change Email</label>
+                            <div style="display:flex; gap:10px;">
+                                <input type="email" id="profile-email-input" class="form-control" placeholder="New email address">
+                                <button id="profile-save-email" class="btn btn-outline">Update</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 1.5rem;">
+                            <label>Change Password</label>
+                            <div style="display:flex; gap:10px;">
+                                <input type="password" id="profile-password-input" class="form-control" placeholder="New password (min 6 chars)">
+                                <button id="profile-save-password" class="btn btn-outline">Update</button>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <button id="profile-delete-account" class="btn btn-danger" style="width:100%;"><i class="ph-fill ph-warning-circle"></i> Delete Account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Withdrawal View -->
+            <div id="view-withdrawal" class="app-view">
+                <div class="glass-panel" style="padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+                    <h2>Withdrawal Hub</h2>
+                    <p style="color:var(--text-muted); margin-bottom: 2rem;">Cash out your hard-earned points. 10,000 Points = $1.00 USD.</p>
+                    
+                    <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <div>
+                            <span style="color:var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem;">Available Balance</span>
+                            <h3 style="color:#FFD700; font-size: 2.5rem; margin: 0;">$<span id="withdraw-available-balance">0.00</span></h3>
+                            <p style="margin: 0; color:var(--text-muted);"><span id="withdraw-available-points">0</span> Points</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <span style="color:var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem;">Minimum Payout</span>
+                            <h3 style="font-size: 1.5rem; margin: 0;">$1.00</h3>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <div style="display:flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color:var(--text-muted); font-size: 0.9rem;">Progress to Next Payout</span>
+                            <span style="color:var(--accent-cyan); font-weight: bold;" id="withdraw-progress-text">0%</span>
+                        </div>
+                        <div style="width: 100%; height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden;">
+                            <div id="withdraw-progress-bar" style="height: 100%; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple)); width: 0%; transition: width 0.5s ease; box-shadow: 0 0 10px var(--accent-cyan);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Select Payment Method</h3>
+                <div class="payment-methods-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                    
+                    <!-- PayPal -->
+                    <div class="payment-card glass-panel" data-method="paypal">
+                        <img src="assets/images/paypal_icon.png" alt="PayPal">
+                        <h4>PayPal</h4>
+                        <p>Min: $1.00</p>
+                    </div>
+
+                    <!-- Bank Transfer -->
+                    <div class="payment-card glass-panel" data-method="bank">
+                        <img src="assets/images/bank_icon.png" alt="Bank Transfer">
+                        <h4>Bank Transfer</h4>
+                        <p>Min: $1.00</p>
+                    </div>
+
+                    <!-- Crypto -->
+                    <div class="payment-card glass-panel" data-method="crypto">
+                        <img src="assets/images/crypto_icon.png" alt="Crypto (LTC/USDT)">
+                        <h4>Crypto (LTC/USDT)</h4>
+                        <p>Min: $1.00</p>
+                    </div>
+
+                </div>
+
+                <!-- Dynamic Form Area -->
+                <div id="withdraw-form-area" class="glass-panel" style="padding: 2rem; border-radius: 16px; display: none;">
+                    <h3 id="withdraw-form-title" style="margin-bottom: 1.5rem;">Payout Details</h3>
+                    <div class="form-group">
+                        <label id="withdraw-input-label">Account Details</label>
+                        <input type="text" id="withdraw-account-input" class="form-control" placeholder="Enter your details">
+                    </div>
+                    <div class="form-group" style="margin-top: 1.5rem;">
+                        <label>Amount to Withdraw ($)</label>
+                        <input type="number" id="withdraw-amount-input" class="form-control" min="1" step="0.01" placeholder="Minimum $1.00">
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <button id="withdraw-submit-btn" class="btn btn-primary glow-btn" style="width: 100%;">Submit Request</button>
+                    </div>
+                </div>
+            </div> <!-- Closes view-withdrawal -->
+
+            <!-- Referral View -->
+            <div id="view-referral" class="app-view">
+                <div class="glass-panel" style="padding: 2.5rem; border-radius: 16px; margin-bottom: 2rem; text-align: center; position: relative; overflow: hidden;">
+                    <div class="glow-orb orb-1" style="top: -50px; right: -50px; width: 200px; height: 200px; opacity: 0.2;"></div>
+                    <i class="ph-fill ph-users-three" style="font-size: 4rem; color: var(--accent-purple); margin-bottom: 1rem;"></i>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Invite Friends, Earn Rewards</h2>
+                    <p style="color:var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">Get 500 Points for every friend that signs up using your unique referral link.</p>
+                    
+                    <div style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 12px; display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 500px;">
+                        <input type="text" id="referral-link-input" readonly style="background: transparent; border: none; color: white; width: 100%; font-family: monospace; font-size: 1rem; outline: none; padding-left: 0.5rem;" value="Loading link...">
+                        <button id="referral-copy-btn" class="btn btn-primary" style="padding: 0.8rem 1.5rem; white-space: nowrap;"><i class="ph-bold ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-stats-grid">
+                    <div class="dash-stat-card glass-panel">
+                        <div class="stat-icon" style="color: var(--accent-cyan);"><i class="ph-fill ph-user-plus"></i></div>
+                        <div>
+                            <p>Total Referrals</p>
+                            <h3 id="referral-total-count">0</h3>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card glass-panel">
+                        <div class="stat-icon" style="color: #FFD700;"><i class="ph-fill ph-coins"></i></div>
+                        <div>
+                            <p>Points Earned</p>
+                            <h3 id="referral-total-points">0</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel" style="padding: 2rem; border-radius: 16px; margin-top: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem;">How it Works</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: rgba(0, 229, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--accent-cyan); font-size: 1.5rem; font-weight: bold;">1</div>
+                            <h4>Share Your Link</h4>
+                            <p style="color:var(--text-muted); font-size: 0.9rem;">Copy your unique link and share it with friends via social media or messaging apps.</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: rgba(255, 0, 229, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--accent-purple); font-size: 1.5rem; font-weight: bold;">2</div>
+                            <h4>Friends Sign Up</h4>
+                            <p style="color:var(--text-muted); font-size: 0.9rem;">Your friend clicks the link, lands on Variant Play, and creates a free account.</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: rgba(255, 215, 0, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #FFD700; font-size: 1.5rem; font-weight: bold;">3</div>
+                            <h4>Get Rewarded</h4>
+                            <p style="color:var(--text-muted); font-size: 0.9rem;">You instantly receive 500 Points added directly to your account balance!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings View -->
+            <div id="view-settings" class="app-view">
+                <div class="glass-panel" style="padding: 2.5rem; border-radius: 16px; margin-bottom: 2rem;">
+                    <h2 style="margin-bottom: 2rem; display: flex; align-items: center; gap: 10px;"><i class="ph-fill ph-gear" style="color: var(--accent-purple);"></i> Account Settings</h2>
+                    
+                    <div class="settings-grid" style="display: grid; gap: 2rem;">
+                        
+                        <!-- Audio Settings -->
+                        <div class="settings-section" style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                            <h3 style="margin-bottom: 1rem; color: var(--accent-cyan);"><i class="ph ph-speaker-high"></i> Audio & Visual</h3>
+                            
+                            <div class="setting-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <div>
+                                    <h4 style="margin: 0;">Game Sound Effects</h4>
+                                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Play sounds when interacting with games.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="setting-sfx" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="setting-item" style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin: 0;">Background Music</h4>
+                                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Play music while in the app dashboard.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="setting-music">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Notifications -->
+                        <div class="settings-section" style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                            <h3 style="margin-bottom: 1rem; color: #FFD700;"><i class="ph ph-bell"></i> Notifications</h3>
+                            
+                            <div class="setting-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <div>
+                                    <h4 style="margin: 0;">Tournament Alerts</h4>
+                                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Get emailed when new tournaments start.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="setting-notify-tournaments" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="setting-item" style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin: 0;">Account & Payment Activity</h4>
+                                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Get emailed about withdrawal status and deposits.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="setting-notify-payments" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Privacy -->
+                        <div class="settings-section" style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                            <h3 style="margin-bottom: 1rem; color: var(--accent-purple);"><i class="ph ph-shield-check"></i> Privacy</h3>
+                            
+                            <div class="setting-item" style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin: 0;">Public Leaderboard Visibility</h4>
+                                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Allow other users to see your profile on global leaderboards.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="setting-privacy-leaderboard" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div style="margin-top: 2rem; display: flex; justify-content: flex-end;">
+                        <button id="settings-save-btn" class="btn btn-primary glow-btn" style="min-width: 150px;">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact View -->
+            <div id="view-contact" class="app-view">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    
+                    <!-- Support Info -->
+                    <div>
+                        <div class="glass-panel" style="padding: 2.5rem; border-radius: 16px; margin-bottom: 2rem;">
+                            <h2 style="margin-bottom: 1rem;"><i class="ph-fill ph-headset" style="color: var(--accent-cyan);"></i> Support Hub</h2>
+                            <p style="color:var(--text-muted); margin-bottom: 2rem;">We're here to help! Reach out to us via email or start a live chat.</p>
+
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                                <h4 style="margin-top: 0; color: var(--accent-purple);"><i class="ph ph-envelope-simple"></i> Official Email</h4>
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem;">
+                                    <span style="font-family: monospace; font-size: 1.1rem;">variantplayofficial@gmail.com</span>
+                                    <button id="contact-copy-email" class="btn btn-outline" style="padding: 0.5rem 1rem;"><i class="ph-bold ph-copy"></i> Copy</button>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 12px; text-align: center;">
+                                    <i class="ph-fill ph-clock" style="font-size: 2rem; color: #FFD700; margin-bottom: 0.5rem;"></i>
+                                    <h5 style="margin: 0;">Response Time</h5>
+                                    <p style="margin: 0; font-size: 0.8rem; color: var(--text-muted);">Under 2 hours</p>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 12px; text-align: center;">
+                                    <i class="ph-fill ph-book-open" style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 0.5rem;"></i>
+                                    <h5 style="margin: 0;">FAQ</h5>
+                                    <p style="margin: 0; font-size: 0.8rem; color: var(--text-muted);">Browse answers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Chat -->
+                    <div class="glass-panel chat-container" style="display: flex; flex-direction: column; height: 600px; border-radius: 16px; padding: 0; overflow: hidden;">
+                        <div style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 1rem;">
+                            <div style="position: relative;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                                    VP
+                                </div>
+                                <div style="width: 12px; height: 12px; background: #00e5ff; border-radius: 50%; position: absolute; bottom: -2px; right: -2px; border: 2px solid #0f172a;"></div>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0;">Support Team</h4>
+                                <p style="margin: 0; font-size: 0.8rem; color: #00e5ff;">Online</p>
+                            </div>
+                        </div>
+                        
+                        <div id="chat-messages" style="flex: 1; padding: 1.5rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem;">
+                            <div class="chat-bubble bot-bubble">
+                                Hello! How can we help you today?
+                            </div>
+                        </div>
+
+                        <div style="padding: 1.5rem; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05);">
+                            <form id="chat-form" style="display: flex; gap: 10px;">
+                                <input type="text" id="chat-input" class="form-control" placeholder="Type your message..." style="flex: 1;" required autocomplete="off">
+                                <button type="submit" class="btn btn-primary glow-btn" style="padding: 0 1.5rem;"><i class="ph-bold ph-paper-plane-right"></i></button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Admin View -->
+            <div id="view-admin" class="app-view">
+                <div style="display: flex; height: 700px; gap: 2rem;">
+                    
+                    <!-- Chat List (Left) -->
+                    <div class="glass-panel" style="width: 300px; display: flex; flex-direction: column; padding: 0; overflow: hidden; border-radius: 16px;">
+                        <div style="padding: 1.5rem; background: rgba(0,0,0,0.5); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <h3 style="margin: 0; color: var(--accent-purple);"><i class="ph-fill ph-shield-check"></i> Admin Dashboard</h3>
+                            <p style="margin: 0; font-size: 0.8rem; color: var(--text-muted);">Active Support Chats</p>
+                        </div>
+                        <div id="admin-chat-list" style="flex: 1; overflow-y: auto;">
+                            <!-- Dynamically populated list of active users -->
+                        </div>
+                    </div>
+
+                    <!-- Chat Window (Right) -->
+                    <div class="glass-panel" style="flex: 1; display: flex; flex-direction: column; padding: 0; overflow: hidden; border-radius: 16px;">
+                        <div style="padding: 1.5rem; background: rgba(0,0,0,0.5); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <h3 id="admin-chat-target-name" style="margin: 0;">Select a chat</h3>
+                            <p id="admin-chat-target-id" style="margin: 0; font-size: 0.8rem; color: var(--text-muted); font-family: monospace;">---</p>
+                        </div>
+                        
+                        <div id="admin-chat-messages" style="flex: 1; padding: 1.5rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem;">
+                            <!-- Messages go here -->
+                        </div>
+
+                        <div style="padding: 1.5rem; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05);">
+                            <form id="admin-chat-form" style="display: flex; gap: 10px;">
+                                <input type="text" id="admin-chat-input" class="form-control" placeholder="Type your reply..." style="flex: 1;" required autocomplete="off" disabled>
+                                <button type="submit" id="admin-chat-submit" class="btn btn-primary glow-btn" style="padding: 0 1.5rem;" disabled><i class="ph-bold ph-paper-plane-right"></i></button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div id="view-placeholder" class="app-view" style="align-items:center; justify-content:center; flex-direction:column; height:50vh;">
+                <i class="ph ph-wrench" style="font-size:4rem; color:var(--text-muted); margin-bottom:1rem;"></i>
+                <h2>Coming Soon</h2>
+                <p style="color:var(--text-muted);">This section is currently under construction.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals & Overlays -->
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal-content glass-panel">
+            <button class="close-modal"><i class="ph ph-x"></i></button>
+            <h3 class="modal-title" id="auth-modal-title">Welcome Back</h3>
+            <p class="modal-desc" id="auth-modal-desc">Log in to continue earning.</p>
+            <form id="auth-form" class="auth-form">
+                <input type="text" id="username-input" placeholder="Username (Sign up only)" style="display:none;">
+                <input type="email" id="email-input" placeholder="Email Address" required>
+                <input type="password" id="password-input" placeholder="Password" required>
+                <div id="auth-error" style="color: #ff4444; margin-bottom: 1rem; font-size: 0.9rem; display:none;"></div>
+                <button type="submit" class="btn btn-primary glow-btn" id="auth-submit-btn" style="width: 100%;">Log In <i class="ph-fill ph-arrow-right"></i></button>
+            </form>
+            <p style="text-align:center; margin-top:1rem; color:var(--text-muted); cursor:pointer; transition:color 0.3s;" id="auth-toggle-link">Need an account? Sign up</p>
+        </div>
+    </div>
+
+    <div id="game-overlay" class="game-fullscreen-overlay">
+        <div class="game-header">
+            <h3 id="active-game-title">Game Title</h3>
+            <div class="game-header-stats">
+                <button class="close-game btn btn-outline"><i class="ph ph-x"></i> Submit Score</button>
+            </div>
+        </div>
+        <div class="game-layout">
+            <div class="game-sidebar glass-panel">
+                <h4>Game Stats</h4>
+                <div class="stat-box">
+                    <span>Time Left</span>
+                    <h2 id="global-timer" style="color:var(--accent-cyan); text-shadow: 0 0 10px var(--accent-cyan); font-size:3rem; margin-top:0.5rem;">2:00</h2>
+                </div>
+                <div class="stat-box">
+                    <span>Current Score</span>
+                    <h2 id="global-score" style="font-size:2.5rem; margin-top:0.5rem;">0</h2>
+                </div>
+                <div class="stat-box">
+                    <span>Account Balance</span>
+                    <h3 style="color:#FFD700; margin-top:0.5rem;"><span id="sidebar-balance">0</span> points</h3>
+                </div>
+                <div id="game-sidebar-custom" style="margin-top:2rem;"></div>
+            </div>
+            <div class="game-canvas-area" id="game-canvas-area">
+                <!-- Dynamic game content loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="ad-modal" class="modal-overlay">
+        <div class="modal-content glass-panel" style="text-align:center; max-width: 500px;">
+            <button class="close-modal" id="close-ad-btn"><i class="ph ph-x"></i></button>
+            <h3 class="modal-title text-gradient">Submit Score & Earn Coins</h3>
+            <p class="modal-desc">Please watch this short sponsor message to claim your reward.</p>
+            
+            <div id="ad-video-container" style="background:#000; height:200px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; position:relative; overflow:hidden;">
+                <video id="ad-video" width="100%" height="100%" style="object-fit:cover;" muted playsinline>
+                    <!-- Using a Google Sample Video as the mock ad -->
+                    <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                </video>
+                <div id="ad-sponsor-badge" style="position:absolute; top:10px; right:10px; background:rgba(0,0,0,0.6); color:white; padding:2px 8px; font-size:0.7rem; border-radius:4px;">Advertisement</div>
+                <div id="ad-progress-bar" style="position:absolute; bottom:0; left:0; height:5px; background:var(--accent-cyan); width:0%; transition:width 1s linear;"></div>
+            </div>
+            
+            <p id="ad-timer-text" style="font-weight:bold; color:var(--accent-cyan); margin-bottom:1rem;">Reward in <span id="ad-countdown">5</span> seconds...</p>
+            
+            <button id="claim-reward-btn" class="btn btn-primary glow-btn" style="width:100%; display:none;">Claim Coins <i class="ph-fill ph-check-circle"></i></button>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Firebase Compat Libraries for local file:// support -->
+    <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            alert('JS Error: ' + message + ' at line ' + lineno);
+        };
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+    <!-- JavaScript Scripts -->
+    <script src="assets/js/firebase-config.js?v=2"></script>
+    <script src="assets/js/main.js?v=2"></script>
+    <script src="assets/js/games.js?v=4"></script>
+</body>
+</html>
