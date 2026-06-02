@@ -1650,3 +1650,27 @@ input:checked + .slider:before {
         justify-content: center;
     }
 }
+
+@media (max-width: 768px) {
+    .nav-actions {
+        gap: 0.5rem;
+    }
+    .nav-actions .btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    .logo-text {
+        font-size: 1rem;
+    }
+    .logo-mark {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+    }
+    .app-logo {
+        margin-bottom: 2rem;
+    }
+    .nav-container {
+        padding: 1rem 0;
+    }
+}
